@@ -91,6 +91,13 @@ export default {
   border-color: #c9efd1;
 }
 
+.btn-secondary:disabled {
+  background-color: #e1e1e1;
+  border-color: #e1e1e1;
+  color: black;
+  opacity: 1;
+}
+
 .isCompleted {
   color: gray;
   text-decoration: line-through;
