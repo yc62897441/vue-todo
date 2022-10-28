@@ -6,3 +6,19 @@
   max-width: 400px;
   margin: 0 auto;
 }
+
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  height: 38px;
+  padding: 0px 25px;
+  border-radius: 0px;
+  color: black;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}

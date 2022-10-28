@@ -29,13 +29,16 @@
 
 <script>
 import { v4 as uuidv4 } from 'uuid'
+import { mapState } from 'vuex'
 
 export default {
   data() {
     return {
-      newTodo: '',
-      todos: []
+      newTodo: ''
     }
+  },
+  computed: {
+    ...mapState(['todos'])
   },
   methods: {
     addTodo() {
@@ -46,6 +49,7 @@ export default {
         isCompleted: false
       })
       this.newTodo = ''
+      this.commitTodos()
     },
     finishTodo(todoId) {
       this.todos.forEach(todo => {
@@ -53,19 +57,16 @@ export default {
           todo.isCompleted = true
         }
       })
+      this.commitTodos()
+    },
+    commitTodos() {
+      this.$store.commit('setTodos', this.todos)
     }
   }
 }
 </script>
 
 <style>
-.title-wrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: start;
-  margin-bottom: 1rem;
-}
-
 .form-control {
   border-color: black;
   border-radius: 0px;
@@ -78,15 +79,6 @@ export default {
   justify-content: start;
   align-items: center;
   margin-bottom: 1rem;
-}
-
-.btn {
-  height: 38px;
-  padding: 0px 25px;
-  border-radius: 0px;
-  color: black;
-  font-weight: 700;
-  margin-right: 0.5rem;
 }
 
 .btn-primary {
