@@ -37,7 +37,7 @@ export default {
       if (this.totalNum === 0) {
         return 0
       }
-      return (this.completedNum / this.totalNum).toFixed(2) * 100
+      return (this.completedNum * 100 / this.totalNum).toFixed(0)
     }
   },
   methods: {
