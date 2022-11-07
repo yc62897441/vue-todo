@@ -1,13 +1,9 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container-fluid">
+      <div class="container" id="navbar-container">
         <router-link class="navbar-brand" to="/">Navbar</router-link>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div>
           <ul class="navbar-nav">
             <li class="nav-item">
               <router-link class="nav-link" to="/todolist">TODO List</router-link>
@@ -40,6 +36,13 @@ export default {
 
 .navbar {
   height: 5rem;
-  margin-bottom: 1.5rem; 
+  margin-bottom: 1.5rem;
+}
+
+#navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
 }
 </style>
