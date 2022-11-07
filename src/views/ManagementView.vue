@@ -27,7 +27,7 @@ export default {
     completedNum() {
       let count = 0
       this.todos.forEach(todo => {
-        if (todo.isCompleted) {
+        if (!todo.isCompleted) {
           count++
         }
       })
@@ -37,7 +37,7 @@ export default {
       if (this.totalNum === 0) {
         return 0
       }
-      return (this.completedNum * 100 / this.totalNum).toFixed(0)
+      return (100 - (this.completedNum * 100 / this.totalNum).toFixed(0))
     }
   },
   methods: {
